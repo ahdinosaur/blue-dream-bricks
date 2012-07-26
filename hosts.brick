@@ -1,0 +1,19 @@
+#!/bin/bash
+
+$hostname = $(cat /etc/hostname)
+
+cat > /etc/hosts << EOF
+127.0.0.1       localhost 
+127.0.1.1       $hostname.emerald-triangle     blue-dream 
+ 
+192.168.1.35    blue-dream.emerald-triangle     blue-dream 
+192.168.1.69    maui-wowie.emerald-triangle     maui-wowie 
+192.168.1.200   pineapple-express.emerald-triangle      pineapple-express 
+ 
+# The following lines are desirable for IPv6 capable hosts 
+::1     ip6-localhost ip6-loopback 
+fe00::0 ip6-localnet 
+ff00::0 ip6-mcastprefix 
+ff02::1 ip6-allnodes 
+ff02::2 ip6-allrouters 
+EOF
